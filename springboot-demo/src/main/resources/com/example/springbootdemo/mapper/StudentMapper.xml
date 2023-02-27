@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springbootdemo.mapper.StudentMapper">
+    <resultMap id="StudentResult" type="student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <association property="city" resultMap="CityResult" columnPrefix="c_"/>
+    </resultMap>
+    <resultMap id="CityResult" type="City">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="population" column="population"/>
+    </resultMap>
+    <insert id="insert" parameterType="Student">
+        <selectKey resultType="Long" keyProperty="id" order="BEFORE" >
+            SELECT nextval('student_id_seq')
+        </selectKey>
+        insert into student (name, age, city_id)
+            values (#{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{city.id,jdbcType=INTEGER})
+    </insert>
+    <update id="update"></update>
+    <delete id="deleteById"></delete>
+        <select id="getStudentById" parameterType="Long" resultMap="StudentResult">
+            select s.id, s.name, s.age, c.id as c_id, c.name as c_name, c.population as c_population
+            from student s left join cities c on s.city_id = c.id
+            where s.id = ${id}
+    </select>
+
+</mapper>
