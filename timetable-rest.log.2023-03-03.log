@@ -1,0 +1,9 @@
+2023-03-03 16:07:40.828 [main] INFO  com.example.grpcserver.GrpcServerApplication - Starting GrpcServerApplication using Java 17.0.4.1 with PID 7851 (/Users/advance/IdeaProjects/microservice/grpc-demo/grpc-server/target/classes started by advance in /Users/advance/IdeaProjects/microservice)
+2023-03-03 16:07:40.830 [main] INFO  com.example.grpcserver.GrpcServerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-03 16:07:41.405 [main] INFO  com.example.grpcserver.GrpcServerApplication - Started GrpcServerApplication in 1.047 seconds (process running for 1.945)
+2023-03-03 16:09:58.403 [main] INFO  com.example.grpcserver.GrpcServerApplication - Starting GrpcServerApplication using Java 17.0.4.1 with PID 7936 (/Users/advance/IdeaProjects/microservice/grpc-demo/grpc-server/target/classes started by advance in /Users/advance/IdeaProjects/microservice)
+2023-03-03 16:09:58.405 [main] INFO  com.example.grpcserver.GrpcServerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-03 16:09:58.964 [main] INFO  com.example.grpcserver.GrpcServerApplication - Started GrpcServerApplication in 0.999 seconds (process running for 1.799)
+2023-03-03 16:10:36.900 [main] INFO  com.example.grpcserver.GrpcServerApplication - Starting GrpcServerApplication using Java 17.0.4.1 with PID 7945 (/Users/advance/IdeaProjects/microservice/grpc-demo/grpc-server/target/classes started by advance in /Users/advance/IdeaProjects/microservice)
+2023-03-03 16:10:36.902 [main] INFO  com.example.grpcserver.GrpcServerApplication - No active profile set, falling back to 1 default profile: "default"
+2023-03-03 16:10:37.343 [main] INFO  com.example.grpcserver.GrpcServerApplication - Started GrpcServerApplication in 0.77 seconds (process running for 1.585)

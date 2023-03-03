@@ -1,0 +1,21 @@
+-- DROP DATABASE IF EXISTS jpa;
+-- CREATE DATABASE jpa;
+-- DROP TABLE IF EXISTS transaction;
+-- CREATE TABLE transaction
+-- (
+--     id                      serial PRIMARY KEY,
+--     amount                  NUMERIC(20, 5)           NOT NULL,
+--     status                  VARCHAR                  NOT NULL,
+--     created_at              TIMESTAMP WITH TIME ZONE NOT NULL,
+--     created_by              VARCHAR                  NOT NULL,
+--     updated_at              TIMESTAMP WITH TIME ZONE NOT NULL,
+--     updated_by              VARCHAR                  NOT NULL
+-- );
+-- -- DROP TABLE IF EXISTS customer;
+-- CREATE TABLE customer
+-- (
+--     id   serial PRIMARY KEY,
+--     name VARCHAR(255),
+--     age  integer
+-- );
+select datname from pg_database;
