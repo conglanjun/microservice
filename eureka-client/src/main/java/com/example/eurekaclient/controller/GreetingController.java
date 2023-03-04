@@ -19,4 +19,9 @@ public class GreetingController {
     public String greeting() {
         return String.format("Hello from %s!", eurekaClient.getApplication(appName).getName());
     }
+
+    @RequestMapping("/feignDemo")
+    public String feignDemo() {
+        return String.format("demo feign %s!", eurekaClient.getApplication(appName).getName());
+    }
 }

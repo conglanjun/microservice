@@ -1,5 +1,6 @@
 package com.example.eurekaconsumer.controller;
 
+import com.example.eurekaconsumer.feignClient.StoreClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -17,6 +18,9 @@ public class ConsumerController {
     @Autowired
     private DiscoveryClient client;
 
+    @Autowired
+    private StoreClient storeClient;
+
     @GetMapping("/consumer")
     public String consumer() {
         List<ServiceInstance> instances = client.getInstances("spring-cloud-eureka-client1");
@@ -24,5 +28,10 @@ public class ConsumerController {
         String url = "http://" + instance.getHost() + ":" + instance.getPort() + "/greeting";
         System.out.println(url);
         return restTemplate.getForObject(url, String.class);
+    }
+
+    @GetMapping("/store")
+    public String greeting() {
+        return storeClient.feignDemo();
     }
 }
