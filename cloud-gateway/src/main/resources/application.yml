@@ -3,7 +3,7 @@ server:
 spring:
   cloud:
     gateway:
-      routes:
+      routes: # you can also use java code configure it.
         - id: spring-cloud-eureka-client1
           uri: http://localhost:8084/
           predicates:
