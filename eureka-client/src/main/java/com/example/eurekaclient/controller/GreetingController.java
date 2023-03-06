@@ -19,6 +19,7 @@ public class GreetingController {
 
     @RequestMapping("/greeting")
     public String greeting() {
+        log.info("greeting");
         return String.format("Hello from %s!", eurekaClient.getApplication(appName).getName());
     }
 

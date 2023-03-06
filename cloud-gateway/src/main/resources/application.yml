@@ -1,0 +1,14 @@
+server:
+  port: 8888
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: spring-cloud-eureka-client1
+          uri: http://localhost:8084/
+          predicates:
+            - Path=/greeting/**
+        - id: consumer
+          uri: http://localhost:8083/
+          predicates:
+            - Path=/store/**

@@ -2,7 +2,7 @@ spring:
   application:
     name: spring-cloud-eureka-client1
 server:
-  port: 0
+  port: 8084
 eureka:
   client:
     registerWithEureka: true
