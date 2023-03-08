@@ -14,3 +14,9 @@ public ResponseEntity<OAuth2AccessToken> getAccessToken(Principal principal, @Re
 in org.springframework.security.oauth.spring-security-oauth2 class TokenEndpoint
 
 when you start server there are 3 endpoints Will secure Or [Ant [pattern='/oauth/token'], Ant [pattern='/oauth/token_key'], Ant [pattern='/oauth/check_token']]
+
+Use command
+```shell
+keytool -genkey -alias jwt -keyalg RSA -keystore jwt.jks
+```
+to generate jwt.jks file.
