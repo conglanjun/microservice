@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "e965ad86-c9b8-478d-8763-466d864da5ba",
+		"name": "microservice-learning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7225480"
+	},
+	"item": [
+		{
+			"name": "get jwt token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client-app",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "macro",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9201/auth/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9201",
+					"path": [
+						"auth",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get jwt token refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client-app",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJtYWNybyIsInNjb3BlIjpbImFsbCJdLCJhdGkiOiJiZWU5NzAyZi1iMzhjLTRkNzktYWM0ZS04NGQ0ZDVjY2I2MGYiLCJpZCI6MSwiZXhwIjoxNjc4Mjg2ODI2LCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiI5OWZhMWExNS00NWI1LTRlMGEtOTAxYy0wYzVmZjI2MTg3ZjYiLCJjbGllbnRfaWQiOiJjbGllbnQtYXBwIn0.1vGep0sCJRLyy3urlgulRZunaqTD58m-FenAjBPDh5zwAlLptNjNkwIPIQDiz0Hg8k_vyubwLUMwIAtwiS_cH-9ud9q5-rW0szrf1KIbL4E6ZC63aonlWqvOoSj5GL9_jN35zjwqE1mUNeY_e_WQ3t7VlVuD57NKxvKTJuHLpWlZdwpvSmkOmAd2x1bGRDrDJs-opT41Y_PnE-QYY51LAxgl7uRSzY1U28Nr9KgOQWpLjbrFztz-epaT9h6839_cRIwIqc8mF2zEPdC6eRTsIB_kXhehtf2i2PE_V0vbKgdg1yGRerWRi9K7sNI9afiTFwWO_mj6EASFnZB9i2hEhg",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9201/auth/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9201",
+					"path": [
+						"auth",
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hello with token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJhbmR5Iiwic2NvcGUiOlsiYWxsIl0sImlkIjoyLCJleHAiOjE2NzgyMDU0MzAsImF1dGhvcml0aWVzIjpbIlRFU1QiXSwianRpIjoiNWNkYjBhOTEtM2YzYS00ZmUyLWFiYjEtOGE4ZTg4MzcyOTA5IiwiY2xpZW50X2lkIjoiY2xpZW50LWFwcCJ9.L0BdCg9TKq_8foQJtO0uvDxN71ry-6C6_Wsl1ppl8Xr8P_eb4Hq6HgdHEWt5u1Q9ZSi7DQ9ZEsqWwGJBCj0ggfN0NvMtnWJks97uBWEbsU1s6BUdwgxT1Ffcuim_Ab_sFvWx1Ckr0pMHQT-9uBgjnL-itywSVRQtl2FLoqz1fSE2GNdhAk4J2MSBMmCC1DIbUq2A4gC2ZNZFqyUOMsqFfLUvKfT4_T-78Pc529Q0pm2n4gXB4FofDDw1Kw0qaZ29sOETLXA0VaByAeC1CttRNzaMD_8Eb1zhI77SfX4DygabxpltPyuESyE132a0KOTKXP-dJ8R_Lu-jOCB_7ijh7Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client-app",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "macro",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9201/api/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9201",
+					"path": [
+						"api",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get current user with token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJtYWNybyIsInNjb3BlIjpbImFsbCJdLCJpZCI6MSwiZXhwIjoxNjc4MjA0MDI2LCJhdXRob3JpdGllcyI6WyJBRE1JTiJdLCJqdGkiOiJiZWU5NzAyZi1iMzhjLTRkNzktYWM0ZS04NGQ0ZDVjY2I2MGYiLCJjbGllbnRfaWQiOiJjbGllbnQtYXBwIn0.Mc1eTiACq-Bi7ZjuE83FGdfEFOFd7i9dsgrE37ql17jjD4pjloDvm8cvx6IBisuTDZiXvVKJLSuVu4Qzhw_vqDvGh-zHyPbW2CS1C0hEc039G3p-RSfD1MgYcIujYd3yqL5AFO9L6qY2EjTDN9hrIC-C9Au3u0s_QgkyKMwVTDYqNBDhEU6AAK7ew9iqb_j7KOvO73ZJDblIvz4HQFVWvzei8iuMYQ4XnoNG2kD46MPSupZ4y57f9EoQglDAJ0OocCXgDBVGxST7qohfcOIDw8HdnVX_qmG42phpc1WFm7YoqAuT72HuUZQc3uhxdtGlM_1o19WStmNztKM1zbcfUg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "client-app",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "macro",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9201/api/user/currentUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9201",
+					"path": [
+						"api",
+						"user",
+						"currentUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

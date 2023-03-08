@@ -1,0 +1,45 @@
+server:
+  port: 9201
+spring:
+  profiles:
+    active: dev
+  application:
+    name: cloud-auth2-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: oauth2-api-route
+          uri: lb://cloud-auth2-api
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+        - id: oauth2-auth-route
+          uri: lb://cloud-auth2-auth
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: 'http://localhost:9401/rsa/publicKey' #配置RSA的公钥访问地址
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
+secure:
+  ignore:
+    urls: #配置白名单路径
+      - "/actuator/**"
+      - "/auth/oauth/token"
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    hostname: localhost
